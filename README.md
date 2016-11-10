@@ -5,7 +5,7 @@ O Miritrônica (Miriti com Eletrônica) tem como objetivo unir os avanços tecno
 ## Projetos em andamento:
 
 * Barco de miriti controlado pelo celular
-* Robô de miriti Wall-Ti
+* [Robô de miriti Wall-Ti](https://github.com/lasseufpa/Miritronica/wiki/Projeto-Wall-Ti)
 * Bonecos Folclóricos
 
 # Como participar:
