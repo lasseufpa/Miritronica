@@ -16,7 +16,9 @@ const unsigned char egua_som[] PROGMEM = {
 #define cabeca 8
 
 void servo0graus();
+void servo45graus();
 void servo90graus();
+void servo135graus();
 void servo180graus();
 
 //Declaração do pino do sensor ultrassônico
@@ -65,16 +67,20 @@ void loop() {
     //Desliga as LEDs azul e verde
     digitalWrite(g, HIGH);
     digitalWrite(b, HIGH);
+//Roda os servos dos braços até 90 graus
     for (char i = 0; i < 100; i++) {
       servo90graus();
+      servo135graus();
       if (i % 5 == 0) {
         digitalWrite(v, stat);
         digitalWrite(r, stat);
         stat = !(stat);
       }
     }
+//Roda os servos dos braços de volta à 0 graus    
     for (char i = 0; i < 100; i++) {
       servo0graus();
+      servo45graus();
       if (i % 5 == 0) {
         digitalWrite(v, stat);
         digitalWrite(r, stat);
@@ -115,22 +121,48 @@ void servo0graus()              //Posiciona o servo em 0 graus
   // 19400/600 = ~~32
 } //end servo0graus
 
+void servo45graus()             //Posiciona o servo em 90 graus
+{
+  digitalWrite(cabeca, HIGH);  //pulso do servo
+  delayMicroseconds(1050);     //1.05ms
+  digitalWrite(cabeca, LOW);//completa periodo do servo
+  for (int i = 0; i < 18; i++)delayMicroseconds(1050);
+  // 20ms = 20000us
+  // 20000us - 1050us = 18950us
+  // 18950/1500 = ~18
+} //end servo0graus
+
 void servo90graus()             //Posiciona o servo em 90 graus
 {
-  digitalWrite(servo1, HIGH);  //pulso do servo
+  digitalWrite(braco1, HIGH);  //pulso do servo
+  digitalWrite(braco2, HIGH);
   delayMicroseconds(1500);     //1.5ms
-  digitalWrite(servo1, LOW);   //completa periodo do servo
+  digitalWrite(braco1, LOW);
+  digitalWrite(braco2, LOW);//completa periodo do servo
   for (int i = 0; i < 12; i++)delayMicroseconds(1500);
   // 20ms = 20000us
   // 20000us - 1500us = 18500us
   // 18500/1500 = ~~12
 } //end servo0graus
 
+void servo135graus()             //Posiciona o servo em 90 graus
+{
+  digitalWrite(cabeca, HIGH);  //pulso do servo
+  delayMicroseconds(1950);     //1.95ms
+  digitalWrite(cabeca, LOW);//completa periodo do servo
+  for (int i = 0; i < 9; i++)delayMicroseconds(1950);
+  // 20ms = 20000us
+  // 20000us - 1950us = 18050us
+  // 18050/1950 = ~9
+} //end servo0graus
+
 void servo180graus()             //Posiciona o servo em 180 graus
 {
-  digitalWrite(servo1, HIGH);  //pulso do servo
+  digitalWrite(braco1, HIGH);  //pulso do servo
+  digitalWrite(braco2, HIGH);
   delayMicroseconds(2400);     //2.4ms
-  digitalWrite(servo1, LOW);   //completa periodo do servo
+  digitalWrite(braco1, LOW);
+  digitalWrite(braco2, LOW);//completa periodo do servo
   for (int i = 0; i < 7; i++)delayMicroseconds(2400);
   // 20ms = 20000us
   // 20000us - 2400us = 17600us
