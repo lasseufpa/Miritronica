@@ -14,7 +14,7 @@ Adote uma tarefa [aqui](https://github.com/lasseufpa/Miritronica/issues)
 
 ou entre em contato através do [forum](https://www.quicktopic.com/52/H/xq95KSk64Q3vZ).
 
-temos reuniões semanais com duração de 1h no laboratório de engenharia elétrica
+Temos reuniões semanais (normlmente as sextas pela manhã) com duração de 1h no LASSE-PCT.
 
 
 
