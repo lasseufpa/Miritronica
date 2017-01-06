@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/info_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ffffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.igor.miriapp.MainActivity"
+    tools:showIn="@layout/activity_main"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/lasse"
+        android:id="@+id/imageView12"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/imageView10"
+        android:layout_marginTop="20dp"
+        android:contentDescription="" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/miritronicalogogrande"
+        android:id="@+id/imageView10"
+        android:layout_marginBottom="75dp"
+        android:layout_above="@+id/imageView11"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        tools:text="Miritrônica (Miriti + Eletrônica) é um projeto do LASSE(Laboratório de Sensores e Sistemas Embarcados) que tem o intuito de valorizar o Miriti, produto regional e cultural paraense, por meio da eletrônica. \n O projeto pretende mostrar que brinquedos de miriti aliados à eletrônica podem ser competitivos e atrativos aos jovens e crianças, além de fazer o resgate cultural do miriti, material que vem sendo abandonado ao longo dos anos"
+        android:layout_marginTop="94dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/peti"
+        android:id="@+id/imageView11"
+        android:cropToPadding="true"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

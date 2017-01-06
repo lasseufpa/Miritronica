@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ffffff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.igor.miriapp.MainActivity"
+    tools:showIn="@layout/activity_main"
+    >
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/mirisetaleft"
+        android:layout_marginStart="10dp"
+        android:id="@+id/leftBtn"
+        android:background="@drawable/mirisetaleft"
+        android:layout_alignTop="@+id/rightBtn"
+        android:layout_alignParentStart="true"
+        android:elevation="0dp"
+        android:contentDescription="Virar para a esquerda" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/mirisetadown"
+        android:id="@+id/downBtn"
+        android:background="@drawable/mirisetadown"
+        android:elevation="0dp"
+        android:contentDescription="Mover para trás"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/upBtn"
+        android:layout_marginBottom="17dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/mirisetaup"
+        android:id="@+id/upBtn"
+        android:background="@drawable/mirisetaup"
+        android:elevation="0dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="Mover para frente"
+        android:layout_above="@+id/rightBtn"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/miriseta"
+        android:id="@+id/rightBtn"
+        android:background="@drawable/miriseta"
+        android:elevation="0dp"
+        android:layout_marginStart="92dp"
+        android:contentDescription="Virar para a direita"
+        android:layout_marginBottom="11dp"
+        android:layout_above="@+id/downBtn"
+        android:layout_alignStart="@+id/imageButton6" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/miritronicalogo"
+        android:id="@+id/imageButton6"
+        android:background="@drawable/miritronicalogo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

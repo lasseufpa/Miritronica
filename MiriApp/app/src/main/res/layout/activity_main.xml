@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.igor.miriapp.MainActivity"
+    app:layout_collapseMode="pin">
+
+    <include
+        android:id="@+id/content_main"
+        android:visibility="visible"
+        layout="@layout/content_main" />
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="642dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:background="@drawable/texture" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/bluetoothButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/stat_sys_data_bluetooth"
+        app:layout_anchorGravity="bottom|right"
+        app:backgroundTint="?attr/colorPrimary" />
+
+    <include
+        android:id="@+id/info_main"
+        android:visibility="gone"
+        layout="@layout/info_main"
+        android:layout_height="336dp" />
+
+</android.support.design.widget.CoordinatorLayout>

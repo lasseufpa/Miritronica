@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MiriApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="textview">Miritrônica (Miriti + Eletrônica) é um projeto do LASSE(Laboratório de Sensores e Sistemas Embarcados) que tem o intuito de valorizar o Miriti, produto regional e cultural paraense, por meio da eletrônica. \n O projeto pretende mostrar que brinquedos de miriti aliados à eletrônica podem ser competitivos e atrativos aos jovens e crianças, além de fazer o resgate cultural do miriti, material que vem sendo abandonado ao longo dos anos</string>
+</resources>
