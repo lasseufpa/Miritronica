@@ -1,7 +1,7 @@
 #include<Servo.h>
+#include <MsTimer2.h>
 Servo leme;
 int pos;
-#include <MsTimer2.h>
 unsigned long anterior=0, atual=0;
 
 void setup() {
@@ -27,8 +27,18 @@ void loop() {
     else {
       if (a == 'r' && pos > 10) {
         pos -=  20;
+      }else{
+      if
+      (a=='f'){
+      praFrente();
+      }else{
+      if('b'){
+      praTras(;
       }
-    }
+      }
+      }
+          
+  }
     anterior=millis();
   }
   
@@ -36,6 +46,7 @@ leme.write(pos);
 atual=millis();
  if(atual>anterior+1000){
    MsTimer2::start();
+   paraMotor();
   }
 }
 
@@ -48,3 +59,27 @@ atual=millis();
     }
    }
   }
+  
+  void paraMotor()  
+{  
+
+  digitalWrite(entrada1, LOW);  
+  digitalWrite(entrada2, LOW);  
+  delay(500);  
+}
+
+void praFrente()
+{
+ 
+  digitalWrite(entrada1, HIGH);  
+  digitalWrite(entrada2, LOW);  
+  delay(490);  
+}
+
+void praTras()
+{
+ 
+  digitalWrite(entrada1, LOW);   
+  digitalWrite(entrada2, HIGH);  
+  delay(490); 
+}
