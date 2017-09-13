@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (connect) {
                     //while(upButton.isPressed()){
-                    try {
+                        try {
                         outputStream.write("u".getBytes());
                         //Toast.makeText(getApplicationContext(), "u enviado", Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
@@ -321,11 +321,11 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
 
             if (findViewById(R.id.content_main).getVisibility() == View.VISIBLE) {
-                findViewById(R.id.content_main).setVisibility(View.GONE);
+                findViewById(R.id.content_main).setVisibility(View.INVISIBLE);
                 findViewById(R.id.info_main).setVisibility(View.VISIBLE);
                 item.setTitle("VOLTAR");
             } else {
-                findViewById(R.id.info_main).setVisibility(View.GONE);
+                findViewById(R.id.info_main).setVisibility(View.INVISIBLE);
                 findViewById(R.id.content_main).setVisibility(View.VISIBLE);
                 item.setTitle("INFO");
             }
