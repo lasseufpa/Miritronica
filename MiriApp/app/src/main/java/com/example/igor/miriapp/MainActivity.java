@@ -85,44 +85,52 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (connect) {
                     //while(upButton.isPressed()){
-                        try {
+                    try {
+                        BlockOthers(upButton,false);
                         outputStream.write("u".getBytes());
                         //Toast.makeText(getApplicationContext(), "u enviado", Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
                         e.printStackTrace();
                         //Toast.makeText(getApplicationContext(), "u n enviado", Toast.LENGTH_LONG).show();
                     }//}
+                    BlockOthers(upButton,true);
                 }
             }
         });
-
+/*
         upButton.setOnTouchListener(new View.OnTouchListener() {
 
 
-    @Override public boolean onTouch(View v, MotionEvent event) {
-        switch(event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-            if (mHandler != null) return true;
-            mHandler = new Handler();
-            mHandler.postDelayed(mAction, 500);
-            break;
-        case MotionEvent.ACTION_UP:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-         case MotionEvent.ACTION_CANCEL:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-        }
-        return false;
-    }
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                if(event.getPointerCount()>1){
+                    return true;
+                }
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (mHandler != null) return true;
+                        BlockOthers(upButton,false);
+                        mHandler = new Handler();
+                        mHandler.postDelayed(mAction, 500);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(upButton,true);
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(upButton,true);
+                        break;
+                }
+                return false;
+            }
 
-    Runnable mAction = new Runnable() {
-        @Override public void run() {
-                     if (connect) {
+            Runnable mAction = new Runnable() {
+                @Override public void run() {
+                    if (connect) {
                         try {
                             outputStream.write("u".getBytes());
                             //Toast.makeText(getApplicationContext(), "u enviado", Toast.LENGTH_LONG).show();
@@ -131,52 +139,60 @@ public class MainActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "u n enviado", Toast.LENGTH_LONG).show();
                         }
                     }
-	mHandler.postDelayed(this, 500);
-        }
-    };
+                    mHandler.postDelayed(this, 500);
+                }
+            };
         });
 
-
+*/
         downButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (connect) {
-                   // while(downButton.isPressed()){
+                    // while(downButton.isPressed()){
                     try {
+                        BlockOthers(downButton,false);
                         outputStream.write("d".getBytes());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }//}
+                    BlockOthers(downButton,true);
                 }
             }
         });
+/*
+        downButton.setOnTouchListener(new View.OnTouchListener() {
 
-      downButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                if(event.getPointerCount()>1){
+                    return true;
+                }
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (mHandler != null) return true;
+                        BlockOthers(downButton,false);
+                        mHandler = new Handler();
+                        mHandler.postDelayed(mAction, 500);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(downButton,true);
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(downButton,true);
+                        break;
+                }
+                return false;
+            }
 
-    @Override public boolean onTouch(View v, MotionEvent event) {
-        switch(event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-            if (mHandler != null) return true;
-            mHandler = new Handler();
-            mHandler.postDelayed(mAction, 500);
-            break;
-        case MotionEvent.ACTION_UP:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-         case MotionEvent.ACTION_CANCEL:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-        }
-        return false;
-    }
-
-    Runnable mAction = new Runnable() {
-        @Override public void run() {
-                     if (connect) {
+            Runnable mAction = new Runnable() {
+                @Override public void run() {
+                    if (connect) {
                         try {
                             outputStream.write("d".getBytes());
                             //Toast.makeText(getApplicationContext(), "d enviado", Toast.LENGTH_LONG).show();
@@ -185,52 +201,60 @@ public class MainActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "d n enviado", Toast.LENGTH_LONG).show();
                         }
                     }
-	mHandler.postDelayed(this, 500);
-        }
-    };
+                    mHandler.postDelayed(this, 500);
+                }
+            };
         });
-
+*/
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (connect) {
-         //           while(leftButton.isPressed()){
+                    //           while(leftButton.isPressed()){
                     try {
+                        BlockOthers(leftButton,false);
                         outputStream.write("l".getBytes());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }//}
+                    BlockOthers(leftButton,true);
                 }
             }
         });
-
+/*
         leftButton.setOnTouchListener(new View.OnTouchListener() {
 
-    @Override public boolean onTouch(View v, MotionEvent event) {
-        switch(event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-            if (mHandler != null) return true;
-            mHandler = new Handler();
-            mHandler.postDelayed(mAction, 500);
-            break;
-        case MotionEvent.ACTION_UP:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-         case MotionEvent.ACTION_CANCEL:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-        }
-        return false;
-    }
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                if(event.getPointerCount()>1){
+                    return true;
+                }
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (mHandler != null) return true;
+                        BlockOthers(rightButton,false);
+                        mHandler = new Handler();
+                        mHandler.postDelayed(mAction, 500);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(leftButton,true);
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(leftButton,true);
+                        break;
+                }
+                return false;
+            }
 
-    Runnable mAction = new Runnable() {
-        @Override public void run() {
-                     if (connect) {
+            Runnable mAction = new Runnable() {
+                @Override public void run() {
+                    if (connect) {
                         try {
                             outputStream.write("l".getBytes());
                             //Toast.makeText(getApplicationContext(), "l enviado", Toast.LENGTH_LONG).show();
@@ -239,11 +263,11 @@ public class MainActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "l n enviado", Toast.LENGTH_LONG).show();
                         }
                     }
-	mHandler.postDelayed(this, 500);
-        }
-    };
+                    mHandler.postDelayed(this, 500);
+                }
+            };
         });
-
+*/
 
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -251,40 +275,48 @@ public class MainActivity extends AppCompatActivity {
                 if (connect) {
 //                    while (rightButton.isPressed()){
                     try {
+                        BlockOthers(rightButton,false);
                         outputStream.write("r".getBytes());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }//}
+                    BlockOthers(rightButton,true);
                 }
             }
         });
-
+/*
         rightButton.setOnTouchListener(new View.OnTouchListener() {
 
-    @Override public boolean onTouch(View v, MotionEvent event) {
-        switch(event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-            if (mHandler != null) return true;
-            mHandler = new Handler();
-            mHandler.postDelayed(mAction, 500);
-            break;
-        case MotionEvent.ACTION_UP:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-         case MotionEvent.ACTION_CANCEL:
-            if (mHandler == null) return true;
-            mHandler.removeCallbacks(mAction);
-            mHandler = null;
-            break;
-        }
-        return false;
-    }
+            @Override public boolean onTouch(View v, MotionEvent event) {
+                if(event.getPointerCount()>1){
+                    return true;
+                }
+                switch(event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (mHandler != null) return true;
+                        BlockOthers(rightButton,false);
+                        mHandler = new Handler();
+                        mHandler.postDelayed(mAction, 500);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(rightButton,true);
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        if (mHandler == null) return true;
+                        mHandler.removeCallbacks(mAction);
+                        mHandler = null;
+                        BlockOthers(rightButton,true);
+                        break;
+                }
+                return false;
+            }
 
-    Runnable mAction = new Runnable() {
-        @Override public void run() {
-                     if (connect) {
+            Runnable mAction = new Runnable() {
+                @Override public void run() {
+                    if (connect) {
                         try {
                             outputStream.write("r".getBytes());
                             //Toast.makeText(getApplicationContext(), "r enviado", Toast.LENGTH_LONG).show();
@@ -293,10 +325,10 @@ public class MainActivity extends AppCompatActivity {
                             //Toast.makeText(getApplicationContext(), "r n enviado", Toast.LENGTH_LONG).show();
                         }
                     }
-	mHandler.postDelayed(this, 500);
-        }
-    };      });
-
+                    mHandler.postDelayed(this, 500);
+                }
+            };      });
+*/
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -381,4 +413,34 @@ public class MainActivity extends AppCompatActivity {
                 }
         }
     }
+    public void BlockOthers(ImageButton b, boolean f){
+        leftButton.setEnabled((b==leftButton)||f);
+        rightButton.setEnabled((b==rightButton)||f);
+        downButton.setEnabled((b==downButton)||f);
+        upButton.setEnabled((b==upButton)||f);
+
+        /*   if(b == upButton){
+            leftButton.setEnabled(f);
+            rightButton.setEnabled(f);
+            downButton.setEnabled(f);
+        }else{
+            if(b== downButton){
+                rightButton.setEnabled(f);
+                leftButton.setEnabled(f);
+                upButton.setEnabled(f);
+            }
+            else{
+                if(b== leftButton){
+                    upButton.setEnabled(f);
+                    downButton.setEnabled(f);
+                    rightButton.setEnabled(f);
+                }else{
+                    if(b==rightButton)
+                        upButton.setEnabled(f);
+                    downButton.setEnabled(f);
+                    leftButton.setEnabled(f);
+                }
+            }
+        }
+   */ }
 }

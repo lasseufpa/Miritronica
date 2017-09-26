@@ -1,5 +1,5 @@
 #include<Servo.h> 
-#include<MsTimer2.h>
+
 Servo leme;
 int pos;
 unsigned long anterior=0, atual=0;
@@ -8,8 +8,8 @@ int entrada1=4,entrada2=5;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  MsTimer2::set(250, balanceamento); // 250ms period    
-  MsTimer2::start();
+ // MsTimer2::set(250, balanceamento); // 250ms period    
+ // MsTimer2::start();
   pos = 90;
   leme.attach(3);
   leme.write(pos);
@@ -19,7 +19,7 @@ void setup() {
 void loop() {
   if (Serial.available())
   {
-    MsTimer2::stop();
+    //MsTimer2::stop();
     char a = Serial.read();
     Serial.println(a);
     if (a == 'l' && pos < 175) {
@@ -44,12 +44,12 @@ void loop() {
   
 leme.write(pos);
 atual=millis();
- if(atual>anterior+2000){
-   MsTimer2::start();
+ if(atual>anterior+1000){
+   //MsTimer2::start();
    paraMotor();
   }
 }
-
+/*
  void balanceamento(){
   if (pos > 90) {
     pos = pos - 20;
@@ -59,7 +59,7 @@ atual=millis();
     }
    }
   }
-  
+  */
   void paraMotor()  
 {  
   digitalWrite(entrada1, HIGH);  
