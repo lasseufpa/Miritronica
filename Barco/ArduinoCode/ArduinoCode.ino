@@ -1,6 +1,7 @@
 #include<Servo.h> 
 
 Servo leme;
+Servo motor;
 int pos;
 unsigned long anterior=0, atual=0;
 int entrada1=4,entrada2=5;
@@ -10,10 +11,16 @@ void setup() {
   Serial.begin(9600);
  // MsTimer2::set(250, balanceamento); // 250ms period    
  // MsTimer2::start();
+  pinMode(9, OUTPUT);
+
+  motor.attach(9);
+  motor.write(150);
+
   pos = 90;
   leme.attach(3);
   leme.write(pos);
   millis();
+  
 }
 
 void loop() {

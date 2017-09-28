@@ -5,7 +5,9 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.hardware.camera2.params.ColorSpaceTransform;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean pressed;
     UUID meuUUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     private Handler mHandler;
+    FloatingActionButton bluetoothBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         downButton = (ImageButton) findViewById(R.id.downBtn);
         leftButton = (ImageButton) findViewById(R.id.leftBtn);
         rightButton = (ImageButton) findViewById(R.id.rightBtn);
-        final FloatingActionButton bluetoothBtn = (FloatingActionButton) findViewById(R.id.bluetoothButton);
+        bluetoothBtn = (FloatingActionButton) findViewById(R.id.bluetoothButton);
         if (bluetooth == null) {
             Toast.makeText(getApplicationContext(), "Seu dispositivo não suporta bluetooth", Toast.LENGTH_LONG).show();
             finish();
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     //disconnect
                     try {
                         socket.close();
-                        bluetoothBtn.setBackgroundColor(Color.RED);
+                        bluetoothBtn.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
                         connect = false;
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -404,6 +407,7 @@ public class MainActivity extends AppCompatActivity {
                         outputStream = socket.getOutputStream();
                         Toast.makeText(getApplicationContext(), "Conectado com: " + MAC, Toast.LENGTH_LONG).show();
                         connect = true;
+                        bluetoothBtn.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
                     } catch (IOException e) {
                         Toast.makeText(getApplicationContext(), "Ocorreu um erro \n " + e, Toast.LENGTH_LONG).show();
                     }

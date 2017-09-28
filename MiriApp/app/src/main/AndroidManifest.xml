@@ -3,6 +3,9 @@
     package="com.example.igor.miriapp">
 <uses-permission android:name="android.permission.BLUETOOTH"/>
 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/m"
@@ -23,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DeviceList"
-            android:label="Dispositivos Pareados"
+            android:label="Buscando Dispositivos"
             android:theme="@android:style/Theme.Dialog"
             ></activity>
     </application>

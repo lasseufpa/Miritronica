@@ -33,9 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|start"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/stat_sys_data_bluetooth"
+        app:backgroundTint="@android:color/holo_red_dark"
         app:layout_anchorGravity="bottom|right"
-        app:backgroundTint="?attr/colorPrimary" />
+        app:srcCompat="@android:drawable/stat_sys_data_bluetooth" />
 
     <include
         android:id="@+id/info_main"
